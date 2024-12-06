@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 245px;
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width:100%;
+            height: 60%;
+            display: block;
+        }
+        .gallery-item h3 {
+            margin: 0;
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+            
+    </style>
+    
+</head>
+
+<body>
+    <header style="text-align: center; padding: 5px; background-color: #333; color: white;">
+        <h1>Snacks</h1>
+    </header>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="./image/Croissant nature1.jpg" alt="Croissant nature">
+            <h3>Croissant nature</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Croissant farci (jambon-fromage).jpg" alt="Croissant farci (jambon/fromage)">
+            <h3>Croissant farci (jambon/fromage)</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Pain au chocolat.jpg" alt="Pain au chocolat">
+            <h3>Pain au chocolat</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Sandwich tunisien.jpg" alt="Sandwich tunisien">
+            <h3>Sandwich tunisien</h3>
+        </div>
+       
+    </section>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+*{
+  padding: 0; 
+  margin: 0;
+  box-sizing: border-box;
+  font-family: century;
+}
+header {
+    background-image: url(./image/cafe5.PNG);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.logo a{
+  color: rgb(238, 153, 96);
+  padding: 0px 20px;
+  border: 1px solid #ffffff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 900;
+  text-shadow: rgba(0, 0, 0, 0.7);
+}
+.logo span{
+  color: rgb(143, 54, 2);
+  font-weight: bold;
+  font-size: 2rem;
+}
+ul{
+  list-style: none;
+  float: right;
+  display: flex;
+  margin-top: 20px;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 10px;
+  border: 1px solid transparent;
+  margin: 5px;
+  font-weight: 500;
+  transition: 00.6s ease;
+}
+ul li a:hover{
+  background:  #0b0899;
+  color:#fff;
+  font-weight: 500;
+  
+}
+ul li.active a {
+  background: #0b0899;
+  color:  #fff;
+  font-weight: 500;
+}
+.principale{
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.titre{
+  position: absolute;
+  top: 55%;
+  right: -6%;
+  transform: translate(-50% , -50%);
+
+}
+.titre h1 {
+  color:  rgb(238, 153, 96);
+  font-size: 40px;
+  
+}
+.titre1{
+  position: absolute;
+  top: 65%;
+  right: -16%;
+  transform: translate(-50% , -50%);
+
+}
+.titre1 h2 {
+  color:  rgb(245, 216, 185);
+  font-size: 30px;
+}
+.bouton{
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  transform: translate(-50% , -50%);
+}
+.bouton a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px transparent #fff;
+  padding: 10px 2pc;
+  
+}
+.btn{
+  transition: 00.6s ease;
+}
+.btn:hover{
+  background-color: #fff;
+  color: #0b0899;
+}

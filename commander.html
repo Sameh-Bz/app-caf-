@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commander.css">
+    <title>Commander</title>
+    <script>
+        function calculateTotal(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+
+            // Récupération de la table sélectionnée
+            const tableSelect = document.getElementById('table-select');
+            if (!tableSelect.value) {
+                alert("Veuillez sélectionner une table avant de valider la commande.");
+                return;
+            }
+
+            let total = 0;
+            let selectedItems = []; // Stocke les articles sélectionnés
+
+            // Liste des prix associés aux articles
+            const prices = {
+                "Café express": 2.5,
+                "Café crème": 4.0,
+                "Cappuccino": 5.0,
+                "Thé à la menthe": 3.0,
+                "Thé aux amandes/pignons": 6.0,
+                "Chocolat chaud": 6.0,
+                "Jus d'orange frais": 6.0,
+                "Jus mixte": 8.0,
+                "Boissons gazeuses": 3.5,
+                "Milkshake": 8.0,
+                "Croissant nature": 2.5,
+                "Croissant farci": 5.0,
+                "Pain au chocolat": 3.0,
+                "Sandwich tunisien": 8.0,
+                "Tartelette": 6.0,
+                "Crêpe": 6.0,
+                "Millefeuille ou éclairs": 5.0,
+                "Glaces": 4.0
+            };
+
+            // Parcours des cases cochées
+            const checkedItems = document.querySelectorAll('input[name="item"]:checked');
+            checkedItems.forEach(item => {
+                selectedItems.push(item.value); // Ajoute l'article à la liste
+                total += prices[item.value]; // Ajoute le prix au total
+            });
+
+            const selectedTable = `Table sélectionnée : Table ${tableSelect.value}`;
+
+            // Affiche les articles sélectionnés et le total dans la zone de texte
+            const resultBox = document.getElementById('result-box');
+            if (selectedItems.length > 0) {
+                resultBox.value = `${selectedTable}\n\nArticles sélectionnés :\n- ${selectedItems.join('\n- ')}\n\nTotal : ${total.toFixed(3)} TND`;
+            } else {
+                resultBox.value = `${selectedTable}\n\nAucun article sélectionné.`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="titre">
+            <h1>Commander</h1>
+        </div>
+    </header>
+    <main>
+        <section class="selection-table">
+            <h2>Sélectionnez une table</h2>
+            <select id="table-select">
+                <option value="" disabled selected>Choisissez une table</option>
+                <script>
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`<option value="${i}">Table ${i}</option>`);
+                    }
+                </script>
+            </select>
+        </section>
+
+        <section class="menu">
+            <h2>Choisissez vos articles</h2>
+            <form id="order-form" onsubmit="calculateTotal(event)">
+                <div class="category">
+                    <h3>Boissons Chaudes</h3>
+                    <label><input type="checkbox" name="item" value="Café express"> Café express (2,500 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Café crème"> Café crème (4,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Cappuccino"> Cappuccino (5,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Thé à la menthe"> Thé à la menthe (3,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Thé aux amandes/pignons"> Thé aux amandes/pignons (6,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Chocolat chaud"> Chocolat chaud (6,000 TND)</label>
+                </div>
+                <div class="category">
+                    <h3>Boissons Froides</h3>
+                    <label><input type="checkbox" name="item" value="Jus d'orange frais"> Jus d'orange frais (6,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Jus mixte"> Jus mixte (8,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Boissons gazeuses"> Boissons gazeuses (3,500 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Milkshake"> Milkshake (8,000 TND)</label>
+                </div>
+                <div class="category">
+                    <h3>Snacks</h3>
+                    <label><input type="checkbox" name="item" value="Croissant nature"> Croissant nature (2,500 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Croissant farci"> Croissant farci (5,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Pain au chocolat"> Pain au chocolat (3,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Sandwich tunisien"> Sandwich tunisien (8,000 TND)</label>
+                </div>
+                <div class="category">
+                    <h3>Desserts</h3>
+                    <label><input type="checkbox" name="item" value="Tartelette"> Tartelette (6,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Crêpe"> Crêpe (6,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Millefeuille ou éclairs"> Millefeuille ou éclairs (5,000 TND)</label><br>
+                    <label><input type="checkbox" name="item" value="Glaces"> Glaces (4,000 TND)</label>
+                </div>
+                <button type="submit" class="btn">Valider la commande</button>
+            </form>
+        </section>
+
+        <section class="result">
+            <h2>* Votre commande *</h2>
+            <textarea id="result-box" rows="20" cols="30" readonly></textarea>
+        </section>
+    </main>
+</body>
+</html>

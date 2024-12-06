@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Images</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 245px;
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width:100%;
+            height: 60%;
+            display: block;
+        }
+        .gallery-item h3 {
+            margin: 0;
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>       
+    
+</head>
+
+<body>
+    <header style="text-align: center; padding: 5px; background-color: #333; color: white;">
+        <h1>Desserts</h1>
+    </header>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="./image/Tartelette (citron).jpg" alt="Tartelette (citron)">
+            <h3>Tartelette (citron)</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Tartelette (fraise).jpg" alt="Tartelette (fraise)">
+            <h3>Tartelette (fraise)</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Tartelette (chocolat).jpg" alt="Tartelette (chocolat)">
+            <h3>Tartelette (chocolat)</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Crêpe (sucre ou chocolat).jpg" alt="Crêpe (sucre ou chocolat)">
+            <h3>Crêpe (sucre ou chocolat)</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Millefeuille.jpg" alt="Millefeuille">
+            <h3>Millefeuille</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/eclairs.jpg" alt="Eclairs">
+            <h3>Eclairs</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="./image/Glaces (boule).jpg" alt="Glaces (boule)">
+            <h3>Glaces (boule)</h3>
+        </div>
+       
+    </section>
+</body>
+</html>
+
